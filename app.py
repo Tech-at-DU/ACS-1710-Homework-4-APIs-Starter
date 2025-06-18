@@ -40,7 +40,7 @@ def get_letter_for_units(units):
     """Returns a shorthand letter for the given units."""
     return 'F' if units == 'imperial' else 'C' if units == 'metric' else 'K'
 
-@app.route('/results')
+@app.route('/weather')
 def results():
     """Displays results for current weather conditions."""
     # TODO: Use 'request.args' to retrieve the city & units from the query
@@ -81,7 +81,7 @@ def results():
     return render_template('results.html', **context)
 
 
-@app.route('/comparison_results')
+@app.route('/weather/comparison')
 def comparison_results():
     """Displays the relative weather for 2 different cities."""
     # TODO: Use 'request.args' to retrieve the cities & units from the query
